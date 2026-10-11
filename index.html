@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL Construction | Site Labor Hiring & Sub-Contracts | Colombo 10</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: {
+                            DEFAULT: '#18181b',
+                            light: '#27272a',
+                            dark: '#0f0f11'
+                        },
+                        glc: {
+                            orange: '#F97316',
+                            orangeDark: '#EA580C',
+                            green: '#059669',
+                            maroon: '#800020',
+                            yellow: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* SVG Orange Dot Grid Background Patterns */
+        .bg-orange-dots-dark {
+            background-color: #18181b;
+            background-image: radial-gradient(#F97316 1.8px, transparent 1.8px), radial-gradient(#F97316 1.8px, #18181b 1.8px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+
+        .bg-orange-dots-light {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#F97316 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+
+        .dot-card-overlay {
+            background-image: radial-gradient(rgba(249, 115, 22, 0.25) 1.5px, transparent 1.5px);
+            background-size: 18px 18px;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(15, 15, 17, 0.94) 0%, rgba(24, 24, 27, 0.88) 100%);
+        }
+
+        .glow-orange {
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-glc-orange selection:text-white">
+
+    <div class="bg-charcoal-dark border-b border-zinc-800 text-xs text-gray-300 py-2.5 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center space-x-2">
+                    <i class="fas fa-map-marker-alt text-glc-orange"></i>
+                    <span class="font-medium">59/1, Vinayalankara Mawatha, Colombo 10, Sri Lanka</span>
+                </span>
+                <span class="flex items-center space-x-2">
+                    <i class="fas fa-clock text-glc-yellow"></i>
+                    <span>Mon - Sat: 8:00 AM - 6:00 PM</span>
+                </span>
+            </div>
+            <div class="flex items-center space-x-5 font-semibold">
+                <a href="tel:0113442555" class="hover:text-glc-orange transition flex items-center space-x-1.5">
+                    <i class="fas fa-phone-alt text-glc-orange"></i>
+                    <span>011 344 2555</span>
+                </a>
+                <a href="https://wa.me/94704293328" target="_blank" class="hover:text-emerald-400 transition flex items-center space-x-1.5">
+                    <i class="fab fa-whatsapp text-emerald-400 text-sm"></i>
+                    <span>070 429 3328</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-charcoal/95 backdrop-blur-md border-b border-zinc-800 text-white transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Title -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-1 shadow-md border-2 border-glc-orange group-hover:scale-105 transition-transform">
+                        <!-- GLC Logo SVG -->
+                        <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 20 L150 55 L150 110 L50 110 L50 55 Z" stroke="#111" stroke-width="8" fill="none"/>
+                            <circle cx="100" cy="55" r="22" fill="#FFC72C"/>
+                            <path d="M70 85 A25 25 0 0 1 130 85" stroke="#008751" stroke-width="8" fill="none"/>
+                            <path d="M40 100 Q 60 80, 80 110 M160 100 Q 140 80, 120 110" stroke="#800020" stroke-width="9" fill="none" stroke-linecap="round"/>
+                            <rect x="30" y="130" width="140" height="45" rx="22" fill="white" stroke="#F97316" stroke-width="7"/>
+                            <text x="100" y="162" font-family="Arial, sans-serif" font-weight="900" font-size="30" fill="#111" text-anchor="middle">GLC</text>
+                            <circle cx="160" cy="148" r="5" fill="#111"/>
+                            <rect x="157" y="153" width="6" height="12" fill="#111"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-wide text-white block">GL <span class="text-glc-orange">CONSTRUCTION</span></span>
+                        <span class="text-[11px] text-gray-400 tracking-wider">Site Labor Hire & Sub-Contracts</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-7 font-medium text-sm">
+                    <a href="#home" class="text-gray-300 hover:text-glc-orange transition-colors">Home</a>
+                    <a href="#clients" class="text-gray-300 hover:text-glc-orange transition-colors">Client Companies</a>
+                    <a href="#services" class="text-gray-300 hover:text-glc-orange transition-colors">Services</a>
+                    <a href="#calculator" class="text-gray-300 hover:text-glc-orange transition-colors">Labor Estimator</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-glc-orange transition-colors">Projects</a>
+                    <a href="#about" class="text-gray-300 hover:text-glc-orange transition-colors">About Us</a>
+                    <a href="#contact" class="text-gray-300 hover:text-glc-orange transition-colors">Contact</a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="tel:0113442555" class="flex items-center space-x-2 text-white bg-zinc-800 hover:bg-zinc-700 px-3.5 py-2.5 rounded-xl text-xs font-semibold border border-zinc-700 transition">
+                        <i class="fas fa-phone-alt text-glc-orange"></i>
+                        <span>011 344 2555</span>
+                    </a>
+                    <a href="https://wa.me/94704293328" target="_blank" class="flex items-center space-x-2 text-white bg-emerald-600 hover:bg-emerald-500 px-4 py-2.5 rounded-xl text-xs font-bold transition shadow-md shadow-emerald-950/40">
+                        <i class="fab fa-whatsapp text-sm"></i>
+                        <span>070 429 3328</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-3">
+                    <a href="https://wa.me/94704293328" target="_blank" class="text-emerald-400 p-2 text-xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-charcoal border-b border-zinc-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-gray-300 hover:text-glc-orange font-medium">Home</a>
+            <a href="#clients" class="block py-2 text-gray-300 hover:text-glc-orange font-medium">Client Companies</a>
+            <a href="#services" class="block py-2 text-gray-300 hover:text-glc-orange font-medium">Services</a>
+            <a href="#calculator" class="block py-2 text-gray-300 hover:text-glc-orange font-medium">Labor Estimator</a>
+            <a href="#gallery" class="block py-2 text-gray-300 hover:text-glc-orange font-medium">Projects</a>
+            <a href="#about" class="block py-2 text-gray-300 hover:text-glc-orange font-medium">About Us</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-glc-orange font-medium">Contact</a>
+            <div class="pt-4 border-t border-zinc-800 flex flex-col space-y-3">
+                <div class="text-xs text-gray-400 flex items-center space-x-2">
+                    <i class="fas fa-map-marker-alt text-glc-orange"></i>
+                    <span>59/1, Vinayalankara Mawatha, Colombo 10</span>
+                </div>
+                <a href="tel:0113442555" class="flex items-center space-x-3 text-gray-200 font-semibold">
+                    <i class="fas fa-phone text-glc-orange"></i>
+                    <span>011 344 2555</span>
+                </a>
+                <a href="https://wa.me/94704293328" target="_blank" class="flex items-center space-x-3 text-emerald-400 font-semibold">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>070 429 3328</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="relative bg-orange-dots-dark min-h-[90vh] flex items-center py-20 text-white overflow-hidden">
+        <!-- Floating Visual Orange Accent Grids -->
+        <div class="absolute top-10 right-10 w-72 h-72 rounded-full bg-glc-orange/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-glc-orange/5 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-up">
+                    <div class="inline-flex items-center space-x-2.5 bg-zinc-900/90 border border-glc-orange/50 px-4 py-2 rounded-full text-glc-orange font-bold text-xs uppercase tracking-wider shadow-lg">
+                        <i class="fas fa-hard-hat text-glc-yellow"></i>
+                        <span>#1 Construction Site Labor & Sub-Contracts Specialist</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Deploy Skilled & Unskilled <span class="text-glc-orange underline decoration-glc-yellow decoration-4 underline-offset-8">Site Labor</span> Fast
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        GL Construction provides reliable construction site workforce hiring and turnkey sub-contracting services across Sri Lanka. Headquartered in Colombo 10 and trusted by leading international contractors.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3.5 sm:space-y-0 sm:space-x-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto bg-glc-orange hover:bg-glc-orangeDark text-white font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-glc-orange/25 transition flex items-center justify-center space-x-2">
+                            <span>Request Site Workforce</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/94704293328?text=Hello%20GL%20Construction,%20I%20want%20to%20hire%20site%20workers." target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-emerald-950/40 transition flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>WhatsApp 070 429 3328</span>
+                        </a>
+                    </div>
+
+                    <!-- Direct Contact Cards -->
+                    <div class="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-zinc-800">
+                        <div class="bg-zinc-900/90 p-4 rounded-2xl border border-zinc-800 flex items-center space-x-3 text-left">
+                            <div class="w-10 h-10 rounded-xl bg-glc-orange/20 flex items-center justify-center text-glc-orange text-lg flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase font-bold block">Hotline</span>
+                                <a href="tel:0113442555" class="font-bold text-white hover:text-glc-orange text-xs sm:text-sm transition">011 344 2555</a>
+                            </div>
+                        </div>
+
+                        <div class="bg-zinc-900/90 p-4 rounded-2xl border border-zinc-800 flex items-center space-x-3 text-left">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg flex-shrink-0">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase font-bold block">WhatsApp</span>
+                                <a href="https://wa.me/94704293328" target="_blank" class="font-bold text-white hover:text-emerald-400 text-xs sm:text-sm transition">070 429 3328</a>
+                            </div>
+                        </div>
+
+                        <div class="bg-zinc-900/90 p-4 rounded-2xl border border-zinc-800 flex items-center space-x-3 text-left">
+                            <div class="w-10 h-10 rounded-xl bg-glc-yellow/20 flex items-center justify-center text-glc-yellow text-lg flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-gray-400 uppercase font-bold block">Location</span>
+                                <span class="font-bold text-white text-xs block leading-snug">Colombo 10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Card with Orange Dot Grid Accent -->
+                <div class="lg:col-span-5" data-aos="fade-left">
+                    <div class="relative bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 glow-orange overflow-hidden">
+                        <!-- Decorative Dot Pattern inside card -->
+                        <div class="absolute inset-0 dot-card-overlay opacity-40 pointer-events-none"></div>
+
+                        <div class="relative z-10 flex items-center justify-between pb-4 border-b border-zinc-800">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                                <span class="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                                <span class="w-3 h-3 bg-emerald-500 rounded-full inline-block"></span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-glc-orange uppercase tracking-wider">GLC Workforce Hub</span>
+                        </div>
+
+                        <div class="relative z-10 space-y-4">
+                            <div class="p-4 bg-zinc-950/80 rounded-2xl border border-zinc-800 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="p-3 bg-glc-orange/20 text-glc-orange rounded-xl">
+                                        <i class="fas fa-tools text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">Skilled Site Craftsmen</h4>
+                                        <p class="text-xs text-gray-400">Masons, Carpenters, Steel Fixers</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] bg-emerald-950 text-emerald-400 px-2.5 py-1 rounded-full font-bold">Ready</span>
+                            </div>
+
+                            <div class="p-4 bg-zinc-950/80 rounded-2xl border border-zinc-800 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="p-3 bg-emerald-500/20 text-emerald-400 rounded-xl">
+                                        <i class="fas fa-user-friends text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">Unskilled Helpers</h4>
+                                        <p class="text-xs text-gray-400">Site Labor, Excavation, Concrete</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] bg-emerald-950 text-emerald-400 px-2.5 py-1 rounded-full font-bold">Ready</span>
+                            </div>
+
+                            <div class="p-4 bg-zinc-950/80 rounded-2xl border border-zinc-800 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="p-3 bg-glc-yellow/20 text-glc-yellow rounded-xl">
+                                        <i class="fas fa-file-contract text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">Turnkey Sub-Contracts</h4>
+                                        <p class="text-xs text-gray-400">Masonry, Plastering, Structural</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] bg-emerald-950 text-emerald-400 px-2.5 py-1 rounded-full font-bold">Active</span>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 pt-2 text-center text-xs text-gray-400 border-t border-zinc-800">
+                            <i class="fas fa-building text-glc-orange mr-1.5"></i> Head Office: 59/1, Vinayalankara Mawatha, Colombo 10
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section id="clients" class="py-20 bg-white border-b border-slate-200 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16" data-aos="fade-up">
+                <span class="text-glc-orange font-black uppercase tracking-widest text-xs bg-glc-orange/10 px-4 py-1.5 rounded-full border border-glc-orange/20">
+                    <i class="fas fa-shield-alt mr-1"></i> Proven Track Record
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-charcoal">Companies That Hire Our Workforce</h2>
+                <p class="text-slate-600 text-sm sm:text-base">We supply skilled craftsmen and unskilled site helpers to major global infrastructure and engineering corporations across Sri Lanka.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Client 1: CCCC -->
+                <div class="relative bg-slate-50 border-2 border-slate-200 rounded-3xl p-6 hover:border-glc-orange hover:shadow-xl transition duration-300 flex flex-col justify-between group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 w-24 h-24 dot-card-overlay opacity-30 pointer-events-none"></div>
+                    <div class="space-y-4 relative z-10">
+                        <div class="w-16 h-16 bg-blue-900 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-md group-hover:bg-glc-orange transition">
+                            CCCC
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold text-glc-orange uppercase tracking-wider block mb-1">Mega-Infrastructure</span>
+                            <h3 class="text-lg font-black text-charcoal leading-snug">China Communications Construction Company</h3>
+                            <p class="text-xs font-semibold text-slate-500 mt-1">(CCCC)</p>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Supplying verified skilled masons, steel fixers, and excavation labor crews for primary port, road, and mega civil projects.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 mt-6 flex items-center justify-between text-xs text-slate-500 font-bold relative z-10">
+                        <span class="text-emerald-600"><i class="fas fa-check-circle mr-1"></i> Labor Hiring</span>
+                        <span class="text-slate-400">Sri Lanka Sites</span>
+                    </div>
+                </div>
+
+                <!-- Client 2: CHEC -->
+                <div class="relative bg-slate-50 border-2 border-slate-200 rounded-3xl p-6 hover:border-glc-orange hover:shadow-xl transition duration-300 flex flex-col justify-between group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 w-24 h-24 dot-card-overlay opacity-30 pointer-events-none"></div>
+                    <div class="space-y-4 relative z-10">
+                        <div class="w-16 h-16 bg-red-900 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-md group-hover:bg-glc-orange transition">
+                            CHEC
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold text-glc-orange uppercase tracking-wider block mb-1">Harbor & Marine Works</span>
+                            <h3 class="text-lg font-black text-charcoal leading-snug">China Harbour Engineering Company Ltd.</h3>
+                            <p class="text-xs font-semibold text-slate-500 mt-1">(CHEC)</p>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Deploying experienced heavy construction labor, machine assistants, and sub-contract crews for marine and land development works.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 mt-6 flex items-center justify-between text-xs text-slate-500 font-bold relative z-10">
+                        <span class="text-emerald-600"><i class="fas fa-check-circle mr-1"></i> Sub-Contracts</span>
+                        <span class="text-slate-400">Sri Lanka Sites</span>
+                    </div>
+                </div>
+
+                <!-- Client 3: CCCC Fourth Harbor -->
+                <div class="relative bg-slate-50 border-2 border-slate-200 rounded-3xl p-6 hover:border-glc-orange hover:shadow-xl transition duration-300 flex flex-col justify-between group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-0 right-0 w-24 h-24 dot-card-overlay opacity-30 pointer-events-none"></div>
+                    <div class="space-y-4 relative z-10">
+                        <div class="w-16 h-16 bg-emerald-800 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-md group-hover:bg-glc-orange transition">
+                            4th H.
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold text-glc-orange uppercase tracking-wider block mb-1">Heavy Civil Structural</span>
+                            <h3 class="text-lg font-black text-charcoal leading-snug">CCCC Fourth Harbor Engineering Co., Ltd.</h3>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Providing scalable daily labor deployment and skilled masonry workforce for reinforced concrete structures.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 mt-6 flex items-center justify-between text-xs text-slate-500 font-bold relative z-10">
+                        <span class="text-emerald-600"><i class="fas fa-check-circle mr-1"></i> Skilled / Unskilled</span>
+                        <span class="text-slate-400">Sri Lanka Sites</span>
+                    </div>
+                </div>
+
+                <!-- Client 4: CRCC -->
+                <div class="relative bg-slate-50 border-2 border-slate-200 rounded-3xl p-6 hover:border-glc-orange hover:shadow-xl transition duration-300 flex flex-col justify-between group overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute top-0 right-0 w-24 h-24 dot-card-overlay opacity-30 pointer-events-none"></div>
+                    <div class="space-y-4 relative z-10">
+                        <div class="w-16 h-16 bg-amber-800 text-white rounded-2xl flex items-center justify-center text-2xl font-black shadow-md group-hover:bg-glc-orange transition">
+                            CRCC
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-extrabold text-glc-orange uppercase tracking-wider block mb-1">Railway & Highway Works</span>
+                            <h3 class="text-lg font-black text-charcoal leading-snug">China Railway Construction Corporation Limited</h3>
+                            <p class="text-xs font-semibold text-slate-500 mt-1">(CRCC)</p>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Supplying site assistants, carpenters, masons, and sub-contract teams for major highway and railway civil engineering projects.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 mt-6 flex items-center justify-between text-xs text-slate-500 font-bold relative z-10">
+                        <span class="text-emerald-600"><i class="fas fa-check-circle mr-1"></i> Labor Hiring</span>
+                        <span class="text-slate-400">Sri Lanka Sites</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Callout Card -->
+            <div class="mt-12 bg-charcoal text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-zinc-800 flex flex-col sm:flex-row items-center justify-between" data-aos="fade-up">
+                <div class="text-left space-y-1 mb-4 sm:mb-0">
+                    <h4 class="font-extrabold text-lg">Need construction labor for your site?</h4>
+                    <p class="text-xs text-gray-400">Call GL Construction Colombo 10 office or message us on WhatsApp directly.</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="tel:0113442555" class="bg-glc-orange hover:bg-glc-orangeDark text-white text-xs font-bold px-5 py-3 rounded-xl transition flex items-center space-x-2">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>011 344 2555</span>
+                    </a>
+                    <a href="https://wa.me/94704293328" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-5 py-3 rounded-xl transition flex items-center space-x-2">
+                        <i class="fab fa-whatsapp text-sm"></i>
+                        <span>070 429 3328</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-orange-dots-light border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16" data-aos="fade-up">
+                <span class="text-glc-orange font-black uppercase tracking-widest text-xs bg-white border border-glc-orange/30 px-4 py-1.5 rounded-full shadow-sm">
+                    Core Solutions
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-charcoal">What We Do For Construction Sites</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Flexible workforce deployment options paired with turnkey sub-contracting capabilities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white border-2 border-slate-200 rounded-3xl p-8 shadow-md hover:shadow-xl hover:border-glc-orange transition duration-300 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="w-16 h-16 bg-glc-orange/10 rounded-2xl flex items-center justify-center text-glc-orange text-3xl mb-6 group-hover:bg-glc-orange group-hover:text-white transition duration-300">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-charcoal mb-3">Site Labor Hiring</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Hire skilled craftsmen and unskilled site workers on daily or monthly arrangements with attendance guarantee.
+                        </p>
+                        <ul class="space-y-3 text-xs text-slate-700 mb-8 font-semibold">
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-glc-orange"></i><span>Masons, Carpenters & Steel Fixers</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-glc-orange"></i><span>Electricians & Plumbers</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-glc-orange"></i><span>Unskilled Site Helpers & Excavation Crew</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center space-x-2 text-xs font-black text-glc-orange hover:text-glc-orangeDark">
+                        <span>Hire Workers Now</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border-2 border-slate-200 rounded-3xl p-8 shadow-md hover:shadow-xl hover:border-glc-green transition duration-300 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-600 text-3xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition duration-300">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-charcoal mb-3">Sub-Contract Works</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Turnkey sub-contracts for concrete framing, brickwork masonry, plastering, earthwork, and building structures.
+                        </p>
+                        <ul class="space-y-3 text-xs text-slate-700 mb-8 font-semibold">
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-emerald-600"></i><span>Concrete Structure Sub-contracts</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-emerald-600"></i><span>Brick Masonry & Internal Plastering</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-emerald-600"></i><span>Retaining Wall & Drainage Works</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center space-x-2 text-xs font-black text-emerald-600 hover:text-emerald-700">
+                        <span>Discuss Sub-Contract</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white border-2 border-slate-200 rounded-3xl p-8 shadow-md hover:shadow-xl hover:border-blue-600 transition duration-300 group flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-600 text-3xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-300">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-charcoal mb-3">Site Labor Supervision</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Dedicated workforce supervisors to monitor daily attendance, work output speed, and site safety compliance.
+                        </p>
+                        <ul class="space-y-3 text-xs text-slate-700 mb-8 font-semibold">
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-600"></i><span>Daily Work Log & Output Records</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-600"></i><span>PPE & Safety Compliance</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check text-blue-600"></i><span>Fast Worker Replacement Guarantee</span></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center space-x-2 text-xs font-black text-blue-600 hover:text-blue-800">
+                        <span>Inquire Supervision</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative bg-orange-dots-dark text-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-zinc-800 overflow-hidden" data-aos="zoom-in">
+                
+                <div class="relative z-10 text-center space-y-3 mb-10">
+                    <span class="text-glc-yellow font-bold uppercase tracking-widest text-xs bg-zinc-900 border border-zinc-800 px-4 py-1.5 rounded-full">
+                        Instant Estimator Tool
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black">Workforce Requirement Calculator</h2>
+                    <p class="text-gray-400 text-xs sm:text-sm">Select required worker counts and days to generate an instant inquiry to GL Construction.</p>
+                </div>
+
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Skilled Craftsmen (Masons / Steel Fixers)</label>
+                            <input type="number" id="calc-skilled" min="0" value="5" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-glc-orange text-sm font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Unskilled Laborers (Site Helpers)</label>
+                            <input type="number" id="calc-unskilled" min="0" value="10" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-glc-orange text-sm font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Estimated Duration (Days)</label>
+                            <input type="number" id="calc-days" min="1" value="14" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-glc-orange text-sm font-bold">
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900/90 p-6 rounded-2xl border border-zinc-800 text-center space-y-6">
+                        <div>
+                            <span class="text-xs text-gray-400 font-medium block mb-1">Total Requested Workforce</span>
+                            <span id="total-workers-display" class="text-4xl font-black text-glc-orange">15 Workers</span>
+                        </div>
+                        <div class="pt-4 border-t border-zinc-800 space-y-3">
+                            <p class="text-xs text-gray-300">Send requirement directly to GL Construction Colombo 10 office via WhatsApp.</p>
+                            <button id="send-calc-whatsapp" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 rounded-xl transition text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-lg shadow-emerald-950/50">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                                <span>Send Request via WhatsApp</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12" data-aos="fade-up">
+                <span class="text-glc-orange font-black uppercase tracking-widest text-xs bg-glc-orange/10 px-4 py-1.5 rounded-full border border-glc-orange/20">
+                    Project Portfolio
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-charcoal">Sub-Contracts & Labor Highlights</h2>
+                <p class="text-slate-600 text-sm">Visual showcase of site operations, structural works, and labor deployments.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-10" data-aos="fade-up">
+                <button class="gallery-btn active bg-glc-orange text-white px-5 py-2.5 rounded-xl text-xs font-bold transition shadow-md" data-filter="all">All Works</button>
+                <button class="gallery-btn bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 px-5 py-2.5 rounded-xl text-xs font-bold transition" data-filter="labor">Labor Deployment</button>
+                <button class="gallery-btn bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 px-5 py-2.5 rounded-xl text-xs font-bold transition" data-filter="subcontract">Sub-Contracts</button>
+            </div>
+
+            <!-- Gallery Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <div class="gallery-item subcontract bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Concreting work" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-glc-orange text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Sub-Contract</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-charcoal text-base">Commercial Frame Concreting</h4>
+                        <p class="text-xs text-slate-500">Turnkey concreting and shuttering sub-contract in Colombo.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item labor bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Skilled Masons" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Labor Hire</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-charcoal text-base">Skilled Masons & Steel Fixers</h4>
+                        <p class="text-xs text-slate-500">50+ skilled masons deployed to international prime contractors.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item subcontract bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f0293?auto=format&fit=crop&w=800&q=80" alt="Retaining wall" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-glc-orange text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Sub-Contract</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h4 class="font-bold text-charcoal text-base">Civil Retaining Wall Masonry</h4>
+                        <p class="text-xs text-slate-500">Heavy masonry and reinforced civil earthwork sub-contracting team.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6" data-aos="fade-right">
+                    <span class="text-glc-orange font-black uppercase tracking-widest text-xs bg-glc-orange/10 px-4 py-1.5 rounded-full border border-glc-orange/20">
+                        About GL Construction
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-charcoal">Empowering Infrastructure Sites Across Sri Lanka</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        GL Construction is a dedicated workforce supply and sub-contracting enterprise headquartered at <strong>59/1, Vinayalankara Mawatha, Colombo 10</strong>. We fulfill the manpower demands of modern construction sites through swift labor deployment and sub-contract management.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Having worked alongside global construction giants such as <strong>CCCC, CHEC, CCCC Fourth Harbor, and CRCC</strong>, GL Construction maintains a high benchmark for site safety, discipline, and execution speed.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl">
+                            <span class="text-2xl font-black text-glc-orange block">Island-Wide</span>
+                            <span class="text-xs text-slate-500 font-semibold">Site Delivery Network</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl">
+                            <span class="text-2xl font-black text-emerald-600 block">Verified</span>
+                            <span class="text-xs text-slate-500 font-semibold">Skilled & Unskilled Crew</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative" data-aos="fade-left">
+                    <div class="relative bg-orange-dots-dark text-white p-8 rounded-3xl shadow-xl border border-zinc-800 space-y-6 overflow-hidden">
+                        
+                        <div class="flex items-center space-x-4 border-b border-zinc-800 pb-6 relative z-10">
+                            <div class="w-16 h-16 bg-white rounded-2xl p-1.5 flex-shrink-0 border-2 border-glc-orange shadow-md">
+                                <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100 20 L150 55 L150 110 L50 110 L50 55 Z" stroke="#111" stroke-width="8" fill="none"/>
+                                    <circle cx="100" cy="55" r="22" fill="#FFC72C"/>
+                                    <path d="M70 85 A25 25 0 0 1 130 85" stroke="#008751" stroke-width="8" fill="none"/>
+                                    <path d="M40 100 Q 60 80, 80 110 M160 100 Q 140 80, 120 110" stroke="#800020" stroke-width="9" fill="none" stroke-linecap="round"/>
+                                    <rect x="30" y="130" width="140" height="45" rx="22" fill="white" stroke="#F97316" stroke-width="7"/>
+                                    <text x="100" y="162" font-family="Arial, sans-serif" font-weight="900" font-size="30" fill="#111" text-anchor="middle">GLC</text>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black">GL Construction</h3>
+                                <p class="text-xs text-gray-400">Head Office • Colombo 10</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 relative z-10">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-zinc-900 rounded-xl flex items-center justify-center text-glc-yellow flex-shrink-0 mt-0.5 border border-zinc-800">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gray-400 uppercase font-bold block">Address</span>
+                                    <p class="font-bold text-sm text-white">59/1, Vinayalankara Mawatha, Colombo 10, Sri Lanka</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-zinc-900 rounded-xl flex items-center justify-center text-glc-orange flex-shrink-0 border border-zinc-800">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gray-400 uppercase font-bold block">Telephone</span>
+                                    <a href="tel:0113442555" class="font-bold text-sm text-white hover:text-glc-orange transition">011 344 2555</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-zinc-900 rounded-xl flex items-center justify-center text-emerald-400 flex-shrink-0 border border-zinc-800">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-gray-400 uppercase font-bold block">WhatsApp</span>
+                                    <a href="https://wa.me/94704293328" target="_blank" class="font-bold text-sm text-white hover:text-emerald-400 transition">070 429 3328</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-orange-dots-light border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16" data-aos="fade-up">
+                <span class="text-glc-orange font-black uppercase tracking-widest text-xs bg-white border border-glc-orange/30 px-4 py-1.5 rounded-full shadow-sm">
+                    Inquiry & Location
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-charcoal">Get In Touch With GL Construction</h2>
+                <p class="text-slate-600 text-sm">Send your site labor requirement or visit our head office in Colombo 10.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Contact Form -->
+                <div class="lg:col-span-7 bg-white border-2 border-slate-200 p-8 rounded-3xl shadow-lg" data-aos="fade-right">
+                    <h3 class="text-xl font-bold text-charcoal mb-6 flex items-center space-x-2">
+                        <i class="fas fa-paper-plane text-glc-orange"></i>
+                        <span>Workforce Request Form</span>
+                    </h3>
+
+                    <form id="contact-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Name *</label>
+                                <input type="text" id="form-name" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-glc-orange" placeholder="Full Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Phone / WhatsApp *</label>
+                                <input type="tel" id="form-phone" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-glc-orange" placeholder="07X XXXXXXX">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Service Type *</label>
+                                <select id="form-service" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-glc-orange font-semibold">
+                                    <option value="Labor Hiring (Skilled & Unskilled)">Site Labor Hiring (Skilled & Unskilled)</option>
+                                    <option value="Sub-Contract Execution">Sub-Contract Execution</option>
+                                    <option value="Labor Supervision">On-Site Supervision</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Worksite Location *</label>
+                                <input type="text" id="form-location" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-glc-orange" placeholder="e.g., Colombo, Hambantota">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Requirement Details *</label>
+                            <textarea id="form-details" rows="4" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-glc-orange" placeholder="Number of masons, helpers, estimated start date..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-glc-orange hover:bg-glc-orangeDark text-white font-extrabold py-4 rounded-xl shadow-lg shadow-glc-orange/20 transition flex items-center justify-center space-x-2">
+                            <span>Submit Workforce Requirement</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Office Location & Map Embed -->
+                <div class="lg:col-span-5 space-y-6" data-aos="fade-left">
+                    <div class="bg-charcoal text-white p-6 rounded-3xl border border-zinc-800 shadow-lg space-y-4">
+                        <h4 class="font-bold text-lg text-glc-yellow flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-glc-orange"></i>
+                            <span>Office Address</span>
+                        </h4>
+                        <p class="text-sm text-gray-300 font-bold leading-relaxed">
+                            GL Construction<br>
+                            59/1, Vinayalankara Mawatha,<br>
+                            Colombo 10, Sri Lanka.
+                        </p>
+                        <div class="pt-3 border-t border-zinc-800 text-xs text-gray-400 space-y-2">
+                            <p class="flex items-center space-x-2"><i class="fas fa-phone text-glc-orange"></i><span>Phone: 011 344 2555</span></p>
+                            <p class="flex items-center space-x-2"><i class="fab fa-whatsapp text-emerald-400"></i><span>WhatsApp: 070 429 3328</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Google Map -->
+                    <div class="bg-white p-2 rounded-3xl border-2 border-slate-200 shadow-lg overflow-hidden h-72">
+                        <iframe 
+                            class="w-full h-full rounded-2xl border-0" 
+                            src="https://maps.google.com/maps?q=Vinayalankara%20Mawatha,%20Colombo%2010,%20Sri%20Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            title="GL Construction Colombo 10 Location Map">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Dialog -->
+    <div id="modal-success" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden">
+        <div class="bg-white p-8 rounded-3xl max-w-md w-full mx-4 shadow-2xl text-center space-y-5">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-charcoal">Inquiry Received!</h3>
+            <p class="text-slate-600 text-sm">Thank you for contacting GL Construction. Our team at <span class="font-bold text-charcoal">59/1, Vinayalankara Mawatha, Colombo 10</span> will connect with you promptly.<br><br>Phone: <span class="font-bold text-charcoal">011 344 2555</span><br>WhatsApp: <span class="font-bold text-emerald-600">070 429 3328</span></p>
+            <button id="modal-close-btn" class="w-full py-3.5 bg-charcoal hover:bg-charcoal-light text-white font-bold rounded-xl transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/94704293328?text=Hello%20GL%20Construction,%20I%20am%20looking%20to%20hire%20site%20workers." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110" aria-label="WhatsApp Chat">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <footer class="bg-charcoal-dark text-white border-t border-zinc-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-white rounded-xl p-1 border border-glc-orange">
+                            <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M100 20 L150 55 L150 110 L50 110 L50 55 Z" stroke="#111" stroke-width="8" fill="none"/>
+                                <circle cx="100" cy="55" r="22" fill="#FFC72C"/>
+                                <path d="M70 85 A25 25 0 0 1 130 85" stroke="#008751" stroke-width="8" fill="none"/>
+                                <path d="M40 100 Q 60 80, 80 110 M160 100 Q 140 80, 120 110" stroke="#800020" stroke-width="9" fill="none" stroke-linecap="round"/>
+                                <rect x="30" y="130" width="140" height="45" rx="22" fill="white" stroke="#F97316" stroke-width="7"/>
+                                <text x="100" y="162" font-family="Arial, sans-serif" font-weight="900" font-size="30" fill="#111" text-anchor="middle">GLC</text>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-black text-white">GL <span class="text-glc-orange">CONSTRUCTION</span></span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-sm">
+                        Construction manpower supply (skilled & unskilled labor) and turnkey sub-contract operations.
+                    </p>
+                    <p class="text-xs text-gray-300 font-semibold flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-glc-orange"></i>
+                        <span>59/1, Vinayalankara Mawatha, Colombo 10, Sri Lanka</span>
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-white border-l-4 border-glc-orange pl-3 uppercase tracking-wider">Client Companies</h4>
+                    <ul class="space-y-1.5 text-xs text-gray-400 font-medium">
+                        <li>China Comm. Const. Co. (CCCC)</li>
+                        <li>China Harbour Eng. Co. (CHEC)</li>
+                        <li>CCCC 4th Harbor Eng. Co.</li>
+                        <li>China Railway Const. Corp. (CRCC)</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-white border-l-4 border-glc-orange pl-3 uppercase tracking-wider">Direct Contacts</h4>
+                    <ul class="space-y-2 text-xs text-gray-400 font-semibold">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-glc-orange"></i>
+                            <a href="tel:0113442555" class="hover:text-white transition">011 344 2555</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fab fa-whatsapp text-emerald-400"></i>
+                            <a href="https://wa.me/94704293328" target="_blank" class="hover:text-white transition">070 429 3328</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-zinc-800 text-center text-xs text-gray-500">
+                <p>&copy; 2026 GL Construction. All Rights Reserved. 59/1, Vinayalankara Mawatha, Colombo 10.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Init AOS Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Labor Calculator Logic
+        const calcSkilled = document.getElementById('calc-skilled');
+        const calcUnskilled = document.getElementById('calc-unskilled');
+        const calcDays = document.getElementById('calc-days');
+        const totalDisplay = document.getElementById('total-workers-display');
+        const sendCalcWhatsapp = document.getElementById('send-calc-whatsapp');
+
+        function updateCalc() {
+            const skilled = parseInt(calcSkilled.value) || 0;
+            const unskilled = parseInt(calcUnskilled.value) || 0;
+            const total = skilled + unskilled;
+            totalDisplay.textContent = `${total} Workers`;
+        }
+
+        calcSkilled.addEventListener('input', updateCalc);
+        calcUnskilled.addEventListener('input', updateCalc);
+
+        sendCalcWhatsapp.addEventListener('click', () => {
+            const skilled = calcSkilled.value || 0;
+            const unskilled = calcUnskilled.value || 0;
+            const days = calcDays.value || 1;
+            const text = encodeURIComponent(`Hello GL Construction (Colombo 10),\nI would like to hire labor for ${days} days:\n- Skilled Craftsmen: ${skilled}\n- Unskilled Workers: ${unskilled}\nTotal Strength: ${parseInt(skilled) + parseInt(unskilled)} workers.`);
+            window.open(`https://wa.me/94704293328?text=${text}`, '_blank');
+        });
+
+        // Gallery Filter Logic
+        const filterBtns = document.querySelectorAll('.gallery-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-glc-orange', 'text-white', 'active');
+                    b.classList.add('bg-white', 'text-slate-700');
+                });
+                btn.classList.add('bg-glc-orange', 'text-white', 'active');
+                btn.classList.remove('bg-white', 'text-slate-700');
+
+                const filter = btn.getAttribute('data-filter');
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Form Submit Handler
+        const contactForm = document.getElementById('contact-form');
+        const modalSuccess = document.getElementById('modal-success');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            modalSuccess.classList.remove('hidden');
+            contactForm.reset();
+        });
+
+        modalCloseBtn.addEventListener('click', () => {
+            modalSuccess.classList.add('hidden');
+        });
+
+        modalSuccess.addEventListener('click', (e) => {
+            if (e.target === modalSuccess) {
+                modalSuccess.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
